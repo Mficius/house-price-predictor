@@ -47,11 +47,12 @@ jobs:
           --backend-store-uri sqlite:///mlflow.db \
           --default-artifact-root /tmp/mlruns
 
+
       - name: Train the Model
         run: |
           python src/models/train_model.py \
           --config configs/model_config.yaml \
-          --data data/processed/featured_house_data.csv \  
+          --data data/processed/featured_house_data.csv \
           --models-dir models \
           --mlflow-tracking-uri http://localhost:5555
 
